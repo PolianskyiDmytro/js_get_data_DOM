@@ -6,19 +6,16 @@ population = population.map((element) => {
   return Number(element.textContent.split(',').join(''));
 });
 
-const totalPopulation = population
-  .reduce((sum, pop) => sum + pop, 0)
-  .toString();
-const averagePopulation = Math.round(
-  Number(totalPopulation) / population.length,
-).toString();
+const totalPopulation = population.reduce((sum, pop) => sum + pop, 0);
+const averagePopulation = Math.round(totalPopulation / population.length);
 
 function numWithCommas(num) {
+  const numStr = num.toString();
   let j = 0;
   let result = '';
 
-  for (let i = num.length - 1; i >= 0; i--) {
-    result = num[i] + result;
+  for (let i = numStr.length - 1; i >= 0; i--) {
+    result = numStr[i] + result;
     j++;
 
     if (j % 3 === 0 && i !== 0) {
