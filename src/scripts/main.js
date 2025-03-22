@@ -10,7 +10,7 @@ const totalPopulation = population
   .reduce((sum, pop) => sum + pop, 0)
   .toString();
 const averagePopulation = Math.round(
-  totalPopulation / population.length,
+  Number(totalPopulation) / population.length,
 ).toString();
 
 let totalResult = '';
